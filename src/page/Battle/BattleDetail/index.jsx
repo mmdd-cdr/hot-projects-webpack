@@ -103,6 +103,7 @@ const BattleDetail = () => {
                 ? "Winner"
                 : "Loser"}
             </div>
+            
             <LazyLoad
               placeholder={
                 <img
