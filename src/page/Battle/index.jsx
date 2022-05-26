@@ -88,7 +88,7 @@ const BattlePage = () => {
         <div className="battle-step-item">
           <div className="step-item-name">Battle</div>
           <div className="step-item-icon-battle">
-            
+
             <IconFont id="icon-battle" />
           </div>
         </div>
