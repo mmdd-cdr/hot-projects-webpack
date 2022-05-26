@@ -1,0 +1,142 @@
+.battle {
+  padding: 0 32px;
+
+  .battle-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .battle-step {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .battle-step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .step-item-name {
+        font-size: 20px;
+        margin: 8px 16px;
+      }
+
+      .step-item-icon {
+        font-size: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eeeeee;
+        padding: 16px;
+      }
+
+      .step-item-icon-user {
+        @extend .step-item-icon;
+        color: #f5c27f;
+      }
+
+      .step-item-icon-battle {
+        @extend .step-item-icon;
+        color: red;
+      }
+
+      .step-item-icon-winner {
+        @extend .step-item-icon;
+        color: #f2ea57;
+      }
+    }
+  }
+
+  .battle-player {
+    margin-top: 10px;
+
+    .battle-player-title {
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .battle-player-context {
+      display: flex;
+      justify-content: space-between;
+
+      .battle-player-context-item {
+        margin-top: 10px;
+        width: 48%;
+
+        .context-item-title {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .context-item-data {
+          display: flex;
+          align-items: center;
+
+          .ant-btn {
+            height: auto;
+          }
+
+          .context-item-data-input {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .render-player {
+        margin-top: 10px;
+        width: 48%;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #dfdfdf;
+        border-radius: 4px;
+
+        .render-player-data {
+          display: flex;
+          align-items: center;
+
+          img {
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            margin-right: 8px;
+          }
+          item-image{
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            margin-right: 8px;
+          }
+          .player-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1890ff;
+          }
+        }
+
+        .render-player-icon {
+          font-size: 18px;
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .battle-button {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .ant-btn {
+        height: auto;
+      }
+    }
+  }
+}

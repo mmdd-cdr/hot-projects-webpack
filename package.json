@@ -1,0 +1,59 @@
+{
+  "name": "hot-projects-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --config ./config/webpack.config.js",
+    "start": "webpack serve --mode development --config ./config/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@babel/core": "^7.18.2",
+    "antd": "^4.20.6",
+    "axios": "^0.27.2",
+    "css-loader": "^6.7.1",
+    "gh-pages": "^4.0.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.6.0",
+    "postcss-pxtorem": "^6.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-lazyload": "^3.2.0",
+    "react-router-dom": "^6.3.0",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1"
+  },
+  "browserslist": {
+    "production": [
+      ">1%",
+      "last 1 versions",
+      "ie>=8",
+      "Firefox> 20",
+      "Chrome > 31"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
