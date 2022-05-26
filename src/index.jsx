@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-import { useRoutes, BrowserRouter } from "react-router-dom";
+import { useRoutes, HashRouter } from "react-router-dom";
 import Footer from '@/component/footer/index';
 import Header from '@/component/header/index';
 import 'antd/dist/antd.min.css';
@@ -36,7 +36,7 @@ const AppRouter = () => {
 }
 
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <div className='page' >
       <Header />
       <div className='app-router' >
@@ -44,6 +44,6 @@ root.render(
       </div>
       <Footer />
     </div>
-  </BrowserRouter>
+  </HashRouter>
 );
 
