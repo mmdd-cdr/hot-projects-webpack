@@ -4,22 +4,20 @@ import axios from "axios";
 import LazyLoad from "react-lazyload";
 import "./index.scss";
 import IconFont from "@/component/IconFont";
-import loadingImg from '@/asset/loading.gif';
+import loadingImg from "@/asset/loading.gif";
 import useTouchBottom from "@/hooks/useTouchBottom";
 
 const tabType = {
-  All:"All",
-  JavaScript:"JavaScript",
-  Ruby:"Ruby",
-  Java:"Java",
-  CSS:"CSS"
-}
+  All: "All",
+  JavaScript: "JavaScript",
+  Ruby: "Ruby",
+  Java: "Java",
+  CSS: "CSS",
+};
 
 const PopularPage = () => {
   const _tab = sessionStorage.getItem("popularTab");
-  const [tab, setTab] = useState(
-    _tab !== null ? (_tab) : (tabType.All)
-  );
+  const [tab, setTab] = useState(_tab !== null ? _tab : tabType.All);
   const [tableData, setTableData] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -30,7 +28,6 @@ const PopularPage = () => {
   useEffect(() => {
     pageRef.current = page;
     addNews();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, tab]);
 
   useEffect(() => {

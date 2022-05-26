@@ -5,19 +5,19 @@ import "./index.scss";
 import axios from "axios";
 import IconFont from "@/component/IconFont";
 import LazyLoad from "react-lazyload";
-import loadingImg from '@/asset/loading.gif';
+import loadingImg from "@/asset/loading.gif";
 
-const BattleDetail = (props) => {
+const BattleDetail = () => {
   const params = useParams();
   const [battleData, setBattleData] = useState({
     playerOne: {},
-    playerTwo: {}
+    playerTwo: {},
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getData = async() => {
+    const getData = async () => {
       setLoading(true);
       const playerOneData = await getUserData(params.playerOne);
       const playerTwoData = await getUserData(params.playerTwo);
@@ -29,18 +29,18 @@ const BattleDetail = (props) => {
       _playerData.playerTwo = playerTwoData;
       setBattleData(_playerData);
       setLoading(false);
-    }
+    };
     getData();
-  }, [])
+  }, []);
 
   //  根据id获取用户信息
   const getUserData = async (id) => {
     const reason = await axios({
-      method: 'get',
+      method: "get",
       url: `https://api.github.com/users/${id}`,
     });
     return reason.data;
-  }
+  };
 
   const goBack = () => {
     sessionStorage.clear();
@@ -49,12 +49,12 @@ const BattleDetail = (props) => {
 
   return (
     <div className="battleDetail">
-      <Spin spinning={loading} >
+      <Spin spinning={loading}>
         <div className="battleCard">
           <div className="battleCard-item">
             <div className="battleCard-item-title">
               {battleData.playerOne.public_repos >=
-                battleData.playerTwo.public_repos
+              battleData.playerTwo.public_repos
                 ? "Winner"
                 : "Loser"}
             </div>
@@ -99,7 +99,7 @@ const BattleDetail = (props) => {
           <div className="battleCard-item">
             <div className="battleCard-item-title">
               {battleData.playerOne.public_repos <
-                battleData.playerTwo.public_repos
+              battleData.playerTwo.public_repos
                 ? "Winner"
                 : "Loser"}
             </div>
