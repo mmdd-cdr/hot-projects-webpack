@@ -110,7 +110,7 @@ const webpackConfig = (env, argv) => {
                       {
                         exclude: /node_modules/,
                         rootValue: 100,
-                        selectorBlackList: [], //过滤
+                        selectorBlackList: [],
                         propList: ["*"],
                       },
                     ],
