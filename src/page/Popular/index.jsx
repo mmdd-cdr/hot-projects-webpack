@@ -23,11 +23,7 @@ const PopularPage = () => {
   const [loading, setLoading] = useState(false);
   const pageRef = useRef(1);
   const loadingRef = useRef(false);
-
-  
-  
-  
-          const tableDataRef = useRef([]);
+  const tableDataRef = useRef([]);
 
   useEffect(() => {
     pageRef.current = page;

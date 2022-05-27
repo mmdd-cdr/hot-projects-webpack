@@ -7,8 +7,7 @@ const Header = () => {
   const pageLocation = useLocation();
 
   return <div className="header" >
-    
-    <div className="header-button" >
+          <div className="header-button" >
       <Link className={`header-nav ${pageLocation.pathname === "/" ? 'active' : ''}`} to="/" >Popular</Link>
     </div>
     <div className="header-button" >
