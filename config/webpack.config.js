@@ -1,6 +1,8 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const optimizeCssAssetsWebpackPlugin = require("css-minimizer-webpack-plugin");
+const terserWebpackPlugin = require("terser-webpack-plugin");
 
 function resolve(relatedPath) {
   return path.join(__dirname, relatedPath);
@@ -27,7 +29,15 @@ const webpackConfig = (env, argv) => {
       historyApiFallback: true,
       open: true,
     },
+    performance: {
+      hints: false
+    },
     optimization: {
+      minimize:true,
+      minimizer:[
+        new terserWebpackPlugin(),
+        new optimizeCssAssetsWebpackPlugin(),
+      ],
       splitChunks: {
         chunks: "all",
         cacheGroups: {
@@ -54,7 +64,20 @@ const webpackConfig = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        title: "Github热⻔门项⽬目",
         template: resolve("../public/index.html"),
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        },
       }),
       new MiniCssExtractPlugin({
         filename: "static/css/[name].[contenthash:8].css",

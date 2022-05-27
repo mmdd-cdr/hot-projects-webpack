@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
+    "css-minimizer-webpack-plugin": "^4.0.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -31,6 +32,7 @@
     "eslint-plugin-react": "^7.30.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
@@ -48,6 +50,7 @@
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
+    "normalize.css": "^8.0.1",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
     "postcss-preset-env": "^7.6.0",
@@ -58,7 +61,8 @@
     "react-lazyload": "^3.2.0",
     "react-router-dom": "^6.3.0",
     "sass-loader": "^13.0.0",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.1"
   },
   "browserslist": {
     "production": [
