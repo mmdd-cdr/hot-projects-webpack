@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.{js,ts}": [
-      "npx eslint --fix"
-    ]
+    "src/**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "eslint --ext .js"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
