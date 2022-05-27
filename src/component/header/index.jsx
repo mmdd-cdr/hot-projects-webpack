@@ -10,8 +10,7 @@ const Header = () => {
     <div className="header-button" >
       <Link className={`header-nav ${pageLocation.pathname === "/" ? 'active' : ''}`} to="/" >Popular</Link>
     </div>
-
-            <div className="header-button" >
+    <div className="header-button" >
       <Link className={`header-nav ${pageLocation.pathname === "/battle" ? 'active' : ''}`} to="/battle" >Battle</Link>
     </div>
   </div>
