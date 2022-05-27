@@ -6,15 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production --config ./config/webpack.config.js",
-    "start": "webpack serve --mode development --config ./config/webpack.config.js"
+    "start": "webpack serve --mode development --config ./config/webpack.config.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "babel-loader": "^8.2.5",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "url-loader": "^4.1.1",
@@ -22,12 +29,20 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "eslint --ext .js"
+  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@babel/core": "^7.18.2",
     "antd": "^4.20.6",
     "axios": "^0.27.2",
     "css-loader": "^6.7.1",
+    "eslint": "^8.16.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.2",
