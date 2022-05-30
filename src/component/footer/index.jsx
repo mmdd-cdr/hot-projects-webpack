@@ -1,8 +1,8 @@
-import React from "react"
-import './index.scss';
+import React from "react";
+import styles from "./index.scss";
 
 const Footer = () => {
-  return <div className="footer" >版权所有 © GITHUB</div>
-}
+  return <div className={styles.footer}>版权所有 © GITHUB</div>;
+};
 
 export default Footer;

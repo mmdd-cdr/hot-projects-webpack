@@ -3,7 +3,7 @@ import IconFont from "@/component/IconFont";
 import { CloseCircleFilled } from "@ant-design/icons";
 import { Input, Button, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import "./index.scss";
+import styles from "./index.scss";
 import loadingImg from "@/asset/loading.gif";
 import LazyLoad from "react-lazyload";
 
@@ -53,11 +53,11 @@ const BattlePage = () => {
   // 渲染player
   const renderPlayer = (player, _playerType) => {
     return (
-      <div className="render-player">
-        <div className="render-player-data">
+      <div className={styles.renderPlayer}>
+        <div className={styles.renderPlayerData}>
           <LazyLoad
             placeholder={
-              <img className="item-image" src={loadingImg} alt="player" />
+              <img className={styles.itemImage} src={loadingImg} alt="player" />
             }
           >
             <img
@@ -65,52 +65,52 @@ const BattlePage = () => {
               alt="player"
             />
           </LazyLoad>
-          <div className="player-name">{player}</div>
+          <div className={styles.playerName}>{player}</div>
         </div>
         <CloseCircleFilled
           onClick={() => clearPlay(_playerType)}
-          className="render-player-icon"
+          className={styles.renderPlayerIcon}
         />
       </div>
     );
   };
 
   return (
-    <div className="battle">
-      <div className="battle-title">Instructions</div>
-      <div className="battle-step">
-        <div className="battle-step-item">
-          <div className="step-item-name">Enter two Github</div>
-          <div className="step-item-icon-user">
+    <div className={styles.battle}>
+      <div className={styles.battleTitle}>Instructions</div>
+      <div className={styles.battleStep}>
+        <div className={styles.battleStepItem}>
+          <div className={styles.stepItemName}>Enter two Github</div>
+          <div className={styles.stepItemIconUser}>
             <IconFont id="icon-users" />
           </div>
         </div>
-        <div className="battle-step-item">
-          <div className="step-item-name">Battle</div>
-          <div className="step-item-icon-battle">
+        <div className={styles.battleStepItem}>
+          <div className={styles.stepItemName}>Battle</div>
+          <div className={styles.stepItemIconBattle}>
             <IconFont id="icon-battle" />
           </div>
         </div>
-        <div className="battle-step-item">
-          <div className="step-item-name">See the winner</div>
-          <div className="step-item-icon-winner">
+        <div className={styles.battleStepItem}>
+          <div className={styles.stepItemName}>See the winner</div>
+          <div className={styles.stepItemIconWinner}>
             <IconFont id="icon-winner" />
           </div>
         </div>
       </div>
-      <div className="battle-player">
-        <div className="battle-player-title">Players</div>
-        <div className="battle-player-context">
+      <div className={styles.battlePlayer}>
+        <div className={styles.battlePlayerTitle}>Players</div>
+        <div className={styles.battlePlayerContext}>
           {playerOne ? (
             renderPlayer(playerOne, playerType.playerOne)
           ) : (
-            <div className="battle-player-context-item">
-              <div className="context-item-title">Player One</div>
-              <div className="context-item-data">
+            <div className={styles.battlePlayerContextItem}>
+              <div className={styles.contextItemTitle}>Player One</div>
+              <div className={styles.contextItemData}>
                 <Input
                   onPressEnter={() => submitPlayer(playerType.playerOne)}
                   onChange={(e) => (_playerOne.current = e.target.value)}
-                  className="context-item-data-input"
+                  className={styles.contextItemDataInput}
                   placeholder="github username"
                 />
                 <Button onClick={() => submitPlayer(playerType.playerOne)}>
@@ -123,13 +123,13 @@ const BattlePage = () => {
           {playerTwo ? (
             renderPlayer(playerTwo, playerType.playerTwo)
           ) : (
-            <div className="battle-player-context-item">
-              <div className="context-item-title">Player Two</div>
-              <div className="context-item-data">
+            <div className={styles.battlePlayerContextItem}>
+              <div className={styles.contextItemTitle}>Player Two</div>
+              <div className={styles.contextItemData}>
                 <Input
                   onPressEnter={() => submitPlayer(playerType.playerTwo)}
                   onChange={(e) => (_playerTwo.current = e.target.value)}
-                  className="context-item-data-input"
+                  className={styles.contextItemDataInput}
                   placeholder="github username"
                 />
                 <Button onClick={() => submitPlayer(playerType.playerTwo)}>
@@ -140,7 +140,7 @@ const BattlePage = () => {
           )}
         </div>
         <div
-          className="battle-button"
+          className={styles.battleButton}
           style={playerOne && playerTwo ? {} : { visibility: "hidden" }}
         >
           <Button type="primary" onClick={() => handleSubmit()}>

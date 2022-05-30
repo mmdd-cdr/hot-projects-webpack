@@ -5,45 +5,45 @@
     align-items: stretch;
     justify-content: space-around;
 
-    .battleCard-item{
+    .battleCardItem{
       width: 264px;
       max-width: 264Px;
       background-color: #dddddd;
       padding: 32Px;
-      .battleCard-item-title{
+      .battleCardItemTitle{
         width: 100%;
         text-align: center;
         font-weight: bold;
         padding: 16Px 0;
         font-size: 20px;
       }
-      .battleCard-item-img{
+      .battleCardItemImg{
         width: 100%;
       }
-      .battleCard-item-scores{
+      .battleCardItemScores{
         font-weight: bold;
         font-size: 12px;
         text-align: center;
         margin-top: 10px;
       }
-      .battleCard-item-name{
+      .battleCardItemName{
         color: #1890ff;
         font-weight: bold;
         font-size: 12px;
         text-align: center;
       }
-      .battleCard-item-row{
+      .battleCardItemRow{
         display: flex;
         align-items: center;
         font-size: 8px;
-        .row-icon{
+        .rowIcon{
           margin-right: 4px;
           font-size: 16Px;
         }
       }
     }
   }
-  .reset-button{
+  .resetButton{
     margin-top: 16Px;
     margin-bottom: 16Px;
     display: flex;

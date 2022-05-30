@@ -9,7 +9,7 @@ const isTouchBottom = (callBack) => {
     document.body.scrollTop || document.documentElement.scrollTop;
   // 所有内容高度
   const allHeight = document.body.scrollHeight;
-  if (allHeight <= showHeight + scrollTopHeight) {
+  if (allHeight <= showHeight + scrollTopHeight + 100) {
     callBack();
   }
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Spin, message } from "antd";
 import axios from "axios";
 import LazyLoad from "react-lazyload";
-import "./index.scss";
+import styles from "./index.scss";
 import IconFont from "@/component/IconFont";
 import loadingImg from "@/asset/loading.gif";
 import useTouchBottom from "@/hooks/useTouchBottom";
@@ -96,7 +96,10 @@ const PopularPage = () => {
           onClick={() => {
             changeTab(innertype);
           }}
-          className={`popular-menu-item ${tab === innertype ? "active" : ""}`}
+          className={`${styles.popularMenuItem} ${
+            tab === innertype && styles.active
+          }`}
+          key={innertype}
         >
           {innertype}
         </div>
@@ -114,40 +117,40 @@ const PopularPage = () => {
   const renderTableItem = () => {
     return tableData.map((item, index) => {
       return (
-        <div className="popular-content-item" key={index}>
-          <div className="item-index">#{index + 1}</div>
+        <div className={styles.popularContentItem} key={index}>
+          <div className={styles.itemIndex}>#{index + 1}</div>
           <LazyLoad
-            className="item-image-lazy"
+            className={styles.itemImageLazy}
             placeholder={
               <img
-                className="item-image"
+                className={styles.itemImage}
                 src={loadingImg}
                 alt={item.owner.login}
               />
             }
           >
             <img
-              className="item-image"
+              className={styles.itemImage}
               src={item.owner.avatar_url}
               alt={item.owner.login}
             />
           </LazyLoad>
           <a
-            className="item-fullName"
+            className={styles.itemFullName}
             href={item.clone_url}
             target="_blank"
             rel="noreferrer"
           >
             {item.full_name}
           </a>
-          <div className="item-text">
+          <div className={styles.itemText}>
             {/* 账号account */}
-            <div className="item-text-child">
-              <div className="icon">
-                <IconFont className="icon-account" id="icon-account" />
+            <div className={styles.itemTextChild}>
+              <div className={styles.icon}>
+                <IconFont className={styles.iconAccount} id="icon-account" />
               </div>
               <a
-                className="item-name item-text-info"
+                className={`${styles.itemName} ${styles.itemTextInfo}`}
                 href={item.clone_url}
                 target="_blank"
                 rel="noreferrer"
@@ -156,27 +159,27 @@ const PopularPage = () => {
               </a>
             </div>
             {/* 有多少start */}
-            <div className="item-text-child">
-              <div className="icon">
-                <IconFont className="icon-start" id="icon-start" />
+            <div className={styles.itemTextChild}>
+              <div className={styles.icon}>
+                <IconFont className={styles.iconStart} id="icon-start" />
               </div>
-              <div className="item-text-info">
+              <div className={styles.itemTextInfo}>
                 {item.stargazers_count} stars
               </div>
             </div>
             {/* 有多少fork */}
-            <div className="item-text-child">
-              <div className="icon">
-                <IconFont className="icon-fork" id="icon-fork" />
+            <div className={styles.itemTextChild}>
+              <div className={styles.icon}>
+                <IconFont className={styles.iconFork} id="icon-fork" />
               </div>
-              <div className="item-text-info">{item.forks} forks</div>
+              <div className={styles.itemTextInfo}>{item.forks} forks</div>
             </div>
             {/* 有多少issue */}
-            <div className="item-text-child">
-              <div className="icon">
-                <IconFont className="icon-issues" id="icon-issues" />
+            <div className={styles.itemTextChild}>
+              <div className={styles.icon}>
+                <IconFont className={styles.iconIssues} id="icon-issues" />
               </div>
-              <div className="item-text-info">
+              <div className={styles.itemTextInfo}>
                 {item.open_issues_count} Open issues
               </div>
             </div>
@@ -187,12 +190,12 @@ const PopularPage = () => {
   };
 
   return (
-    <div className="popular">
-      <div className="popular-menu">{renderMenu()}</div>
-      <div className="popular-content">{renderTableItem()}</div>
+    <div className={styles.popular}>
+      <div className={styles.popularMenu}>{renderMenu()}</div>
+      <div className={styles.popularContent}>{renderTableItem()}</div>
       {
         <Spin>
-          <div className="loading"></div>
+          <div className={styles.loading}></div>
         </Spin>
       }
     </div>

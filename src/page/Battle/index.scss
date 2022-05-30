@@ -1,7 +1,7 @@
 .battle {
   padding: 0 32px;
 
-  .battle-title {
+  .battleTitle {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
@@ -9,22 +9,22 @@
     font-weight: bold;
   }
 
-  .battle-step {
+  .battleStep {
     display: flex;
     justify-content: center;
     width: 100%;
 
-    .battle-step-item {
+    .battleStepItem {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      .step-item-name {
+      .stepItemName {
         font-size: 20px;
         margin: 8px 16px;
       }
 
-      .step-item-icon {
+      .stepItemIcon {
         font-size: 60px;
         width: 100%;
         display: flex;
@@ -34,46 +34,46 @@
         padding: 16px;
       }
 
-      .step-item-icon-user {
-        @extend .step-item-icon;
+      .stepItemIconUser {
+        @extend .stepItemIcon;
         color: #f5c27f;
       }
 
-      .step-item-icon-battle {
-        @extend .step-item-icon;
+      .stepItemIconBattle {
+        @extend .stepItemIcon;
         color: red;
       }
 
-      .step-item-icon-winner {
-        @extend .step-item-icon;
+      .stepItemIconWinner {
+        @extend .stepItemIcon;
         color: #f2ea57;
       }
     }
   }
 
-  .battle-player {
+  .battlePlayer {
     margin-top: 10px;
 
-    .battle-player-title {
+    .battlePlayerTitle {
       width: 100%;
       text-align: center;
       font-weight: bold;
     }
 
-    .battle-player-context {
+    .battlePlayerContext {
       display: flex;
       justify-content: space-between;
 
-      .battle-player-context-item {
+      .battlePlayerContextItem {
         margin-top: 10px;
         width: 48%;
 
-        .context-item-title {
+        .contextItemTitle {
           font-weight: bold;
           margin-bottom: 10px;
         }
 
-        .context-item-data {
+        .contextItemData {
           display: flex;
           align-items: center;
 
@@ -81,13 +81,13 @@
             height: auto;
           }
 
-          .context-item-data-input {
+          .contextItemDataInput {
             margin-right: 10px;
           }
         }
       }
 
-      .render-player {
+      .renderPlayer {
         margin-top: 10px;
         width: 48%;
         padding: 16px;
@@ -97,7 +97,7 @@
         background-color: #dfdfdf;
         border-radius: 4px;
 
-        .render-player-data {
+        .renderPlayerData {
           display: flex;
           align-items: center;
 
@@ -107,20 +107,20 @@
             height: 36px;
             margin-right: 8px;
           }
-          item-image{
+          .itemImage{
             border-radius: 8px;
             width: 36px;
             height: 36px;
             margin-right: 8px;
           }
-          .player-name {
+          .playerName {
             font-size: 20px;
             font-weight: bold;
             color: #1890ff;
           }
         }
 
-        .render-player-icon {
+        .renderPlayerIcon {
           font-size: 18px;
           color: red;
           cursor: pointer;
@@ -128,7 +128,7 @@
       }
     }
 
-    .battle-button {
+    .battleButton {
       margin-top: 10px;
       display: flex;
       align-items: center;

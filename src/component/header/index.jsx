@@ -1,27 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import "./index.scss";
+import styles from "./index.scss";
 
 const Header = () => {
   const pageLocation = useLocation();
 
   return (
-    <div className="header">
-      <div className="header-button">
+    <div className={styles.header}>
+      <div className={styles.headerButton}>
         <Link
-          className={`header-nav ${
-            pageLocation.pathname === "/" ? "active" : ""
+          className={`${styles.headerNav} ${
+            pageLocation.pathname === "/" && styles.active
           }`}
           to="/"
         >
           Popular
         </Link>
       </div>
-      <div className="header-button">
+      <div className={styles.headerButton}>
         <Link
-          className={`header-nav ${
-            pageLocation.pathname === "/battle" ? "active" : ""
+          className={`${styles.headerNav} ${
+            pageLocation.pathname === "/battle" && styles.active
           }`}
           to="/battle"
         >

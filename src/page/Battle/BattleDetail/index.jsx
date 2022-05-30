@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Spin } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
-import "./index.scss";
+import styles from "./index.scss";
 import axios from "axios";
 import IconFont from "@/component/IconFont";
 import LazyLoad from "react-lazyload";
@@ -48,11 +48,11 @@ const BattleDetail = () => {
   };
 
   return (
-    <div className="battleDetail">
+    <div className={styles.battleDetail}>
       <Spin spinning={loading}>
-        <div className="battleCard">
-          <div className="battleCard-item">
-            <div className="battleCard-item-title">
+        <div className={styles.battleCard}>
+          <div className={styles.battleCardItem}>
+            <div className={styles.battleCardItemTitle}>
               {battleData.playerOne.public_repos >=
               battleData.playerTwo.public_repos
                 ? "Winner"
@@ -61,43 +61,43 @@ const BattleDetail = () => {
             <LazyLoad
               placeholder={
                 <img
-                  className="battleCard-item-img"
+                  className={styles.battleCardItemImg}
                   src={loadingImg}
                   alt="player"
                 />
               }
             >
               <img
-                className="battleCard-item-img"
+                className={styles.battleCardItemImg}
                 src={battleData.playerOne.avatar_url}
                 alt="github"
               />
             </LazyLoad>
-            <div className="battleCard-item-scores">
+            <div className={styles.battleCardItemScores}>
               Scores: {battleData.playerOne.public_repos}
             </div>
-            <div className="battleCard-item-name">
+            <div className={styles.battleCardItemName}>
               {battleData.playerOne.name}
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-cursor" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-cursor" />
               <div>{battleData.playerOne.location}</div>
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-users" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-users" />
               <div>{battleData.playerOne.followers}</div>
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-personadd" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-personadd" />
               <div>{battleData.playerOne.public_gists}</div>
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-code" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-code" />
               <div>{battleData.playerOne.public_repos}</div>
             </div>
           </div>
-          <div className="battleCard-item">
-            <div className="battleCard-item-title">
+          <div className={styles.battleCardItem}>
+            <div className={styles.battleCardItemTitle}>
               {battleData.playerOne.public_repos <
               battleData.playerTwo.public_repos
                 ? "Winner"
@@ -106,43 +106,43 @@ const BattleDetail = () => {
             <LazyLoad
               placeholder={
                 <img
-                  className="battleCard-item-img"
+                  className={styles.battleCardItemImg}
                   src={loadingImg}
                   alt="player"
                 />
               }
             >
               <img
-                className="battleCard-item-img"
+                className={styles.battleCardItemImg}
                 src={battleData.playerTwo.avatar_url}
                 alt="github"
               />
             </LazyLoad>
-            <div className="battleCard-item-scores">
+            <div className={styles.battleCardItemScores}>
               Scores: {battleData.playerTwo.public_repos}
             </div>
-            <div className="battleCard-item-name">
+            <div className={styles.battleCardItemName}>
               {battleData.playerTwo.name}
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-cursor" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-cursor" />
               <div>{battleData.playerTwo.location}</div>
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-users" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-users" />
               <div>{battleData.playerTwo.followers}</div>
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-personadd" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-personadd" />
               <div>{battleData.playerTwo.public_gists}</div>
             </div>
-            <div className="battleCard-item-row">
-              <IconFont className="row-icon" id="icon-code" />
+            <div className={styles.battleCardItemRow}>
+              <IconFont className={styles.rowIcon} id="icon-code" />
               <div>{battleData.playerTwo.public_repos}</div>
             </div>
           </div>
         </div>
-        <div className="reset-button">
+        <div className={styles.resetButton}>
           <Button onClick={goBack}>Reset</Button>
         </div>
       </Spin>

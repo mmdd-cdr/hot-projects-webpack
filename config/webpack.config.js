@@ -108,9 +108,55 @@ const webpackConfig = (env, argv) => {
         },
         {
           test: /\.(scss|sass|css)$/,
+          exclude: /node_modules/,
           use: [
             MiniCssExtractPlugin.loader,
-            "css-loader",
+            {
+              loader: 'css-loader',
+              options: {
+                modules: {
+                  localIdentName: '[local]_[hash:base64:5]'
+                }
+              }
+            },
+            "sass-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  ident: "postcss",
+                  config: false,
+                  plugins: [
+                    [
+                      "postcss-preset-env",
+                      {
+                        autoprefixer: {
+                          flexbox: "no-2009",
+                        },
+                        stage: 3,
+                      },
+                    ],
+                    [
+                      "postcss-pxtorem",
+                      {
+                        exclude: /node_modules/,
+                        rootValue: 100,
+                        selectorBlackList: [],
+                        propList: ["*"],
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(scss|sass|css)$/,
+          include:/node_modules/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
             "sass-loader",
             {
               loader: "postcss-loader",
